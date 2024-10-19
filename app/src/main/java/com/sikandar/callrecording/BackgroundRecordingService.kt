@@ -22,8 +22,12 @@ class BackgroundRecordingService : Service() {
     companion object {
         const val NOTIFICATION_ID = 1
         const val CHANNEL_ID = "RecordingChannel"
+        var isRunning = false
     }
-
+    override fun onCreate() {
+        super.onCreate()
+        isRunning = true
+    }
     @SuppressLint("ForegroundServiceType")
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         startForeground(NOTIFICATION_ID, createNotification())
@@ -36,8 +40,8 @@ class BackgroundRecordingService : Service() {
     }
 
     override fun onDestroy() {
-        Log.e("TAG", "onDestroy: ")
         telephonyManager.listen(callStateListener, PhoneStateListener.LISTEN_NONE)
+        isRunning=false
         super.onDestroy()
     }
 

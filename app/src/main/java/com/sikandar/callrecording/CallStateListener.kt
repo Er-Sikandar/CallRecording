@@ -66,8 +66,7 @@ class CallStateListener(private val context: Context) : PhoneStateListener() {
                     release()
                     isRecording = false
 
-                    val uploadWorkRequest =
-                        OneTimeWorkRequest.Builder(FileUploadWorker::class.java)
+                    val uploadWorkRequest = OneTimeWorkRequest.Builder(FileUploadWorker::class.java)
                             .setInputData(workDataOf(FileUploadWorker.KEY_FILE_PATH to filePath))
                             .build()
                     context.sendNotification("File Enque", "Enque.")

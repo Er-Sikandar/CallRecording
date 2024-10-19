@@ -136,17 +136,12 @@ class FileUploadWorker(
     private suspend fun isInternetConnected(context: Context): Boolean {
         return withContext(Dispatchers.IO) {
             try {
-                val connectivityManager =
-                    context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
+                val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
                 val networkCapabilities = connectivityManager.activeNetwork ?: return@withContext false
-                val activeNetwork =
-                    connectivityManager.getNetworkCapabilities(networkCapabilities)
-                        ?: return@withContext false
+                val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return@withContext false
 
                 return@withContext activeNetwork.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
             } catch (e: Exception) {
-                // Handle exceptions if needed
                 return@withContext false
             }
         }
