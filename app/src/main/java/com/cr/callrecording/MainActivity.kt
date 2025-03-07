@@ -1,4 +1,4 @@
-package com.sikandar.callrecording
+package com.cr.callrecording
 
 import android.Manifest
 import android.app.ActivityManager
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.sikandar.callrecording.FileUploadWorker.Companion.sendNotification
+import com.cr.callrecording.FileUploadWorker.Companion.sendNotification
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -25,14 +25,16 @@ class MainActivity : AppCompatActivity() {
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.MODIFY_AUDIO_SETTINGS,
         Manifest.permission.READ_PHONE_STATE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
     )
     private val permissions_33 = arrayOf(
         Manifest.permission.CALL_PHONE,
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.MODIFY_AUDIO_SETTINGS,
         Manifest.permission.READ_PHONE_STATE,
-        Manifest.permission.READ_MEDIA_IMAGES
+        Manifest.permission.POST_NOTIFICATIONS,
+        Manifest.permission.READ_MEDIA_AUDIO,
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

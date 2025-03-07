@@ -1,4 +1,4 @@
-package com.sikandar.callrecording
+package com.cr.callrecording
 
 import android.annotation.SuppressLint
 import android.app.Notification
@@ -13,7 +13,7 @@ import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.sikandar.callrecording.R
+import com.cr.callrecording.R
 
 class BackgroundRecordingService : Service() {
     private lateinit var telephonyManager: TelephonyManager

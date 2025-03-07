@@ -1,4 +1,4 @@
-package com.sikandar.callrecording
+package com.cr.callrecording
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

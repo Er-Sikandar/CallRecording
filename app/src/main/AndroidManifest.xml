@@ -18,7 +18,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"
         tools:ignore="SelectedPhotoAccess"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
   <!--  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
@@ -37,13 +40,13 @@
 
         <!-- Declare the BackgroundRecordingService -->
         <service
-            android:name="com.sikandar.callrecording.BackgroundRecordingService"
+            android:name="com.cr.callrecording.BackgroundRecordingService"
             android:permission="android.permission.FOREGROUND_SERVICE"
             android:foregroundServiceType="microphone"
             android:enabled="true"
             android:exported="false" />
         <activity
-            android:name="com.sikandar.callrecording.MainActivity"
+            android:name="com.cr.callrecording.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
